@@ -1,8 +1,8 @@
 class Node {
     constructor(data) {
-        this.data = data; // node value
-        this.left = null;   // left node child reference
-        this.right = null; // right node child reference
+        this.data = data;
+        this.left = null;
+        this.right = null;
     }
 }
 
@@ -16,7 +16,7 @@ class BinarySearchTree {
         if (this.root === null) {
             this.root = newNode;
         } else {
-            this.insertNode(this.root, newNode); // helper method below
+            this.insertNode(this.root, newNode);
         }
     }
 
@@ -33,30 +33,6 @@ class BinarySearchTree {
             } else {
                 this.insertNode(node.right, newNode);
             }
-        }
-    }
-
-    inOrderTraverse(node, callback) {
-        if (node != null) {
-            this.inOrderTraverse(node.left, callback);
-            callback(node.data);
-            this.inOrderTraverse(node.right, callback);
-        }
-    }
-
-    preOrderTraverse(node, callback) {
-        if (node != null) {
-            callback(node.data);
-            this.preOrderTraverse(node.left, callback);
-            this.preOrderTraverse(node.right, callback);
-        }
-    }
-
-    postOrderTraverse(node, callback) {
-        if (node != null) {
-            this.postOrderTraverse(node.left, callback);
-            this.postOrderTraverse(node.right, callback);
-            callback(node.data);
         }
     }
 
@@ -80,9 +56,11 @@ class BinarySearchTree {
         else
             return this.findMinNode(node.left);
     }
+
     remove(data) {
         this.root = this.removeNode(this.root, data); // helper method below
     }
+
     removeNode(node, data) {
         if (node === null) {
             return null;
