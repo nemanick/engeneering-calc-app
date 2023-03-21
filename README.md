@@ -13,7 +13,7 @@ git clone https://github.com/nemanick/engeneering-calc-app.git
 ```
 npm install react-scripts --save
 ```
-Для запуска скрипта необходимо в директории проекта использовать команду:
+Для запуска приложения необходимо в директории проекта использовать команду:
 
 ```
 npm start
