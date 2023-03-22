@@ -56,7 +56,7 @@ class BinarySearchTree {
         if (node.left === null)
             return node;
         else
-            return this.findMinNode(node.left);
+            return this.minNode(node.left);
     }
 
     remove(data) {

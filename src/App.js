@@ -12,7 +12,7 @@ function Tree(props) {
       if (key === 'left' && typeof value === 'object') {
         if (value !== null) {
           return (
-            <li key={value.data}>
+            <li keys={value.data}>
               <Tree data={value} />
             </li>
           );
@@ -84,14 +84,6 @@ function App() {
     setRoot((prev) => ({ ...prev, ...bst.root }));
   }
 
-  function findMax() {
-    //alert(`Max value is ${bst.findMax()}`); // TODO
-  }
-
-  function findMin() {
-    alert(`Минимальное число: ${bst.minNode()}`);
-  }
-
   return (
     <div className="container">
       <h1>Бинарное дерево поиска</h1>
@@ -102,14 +94,6 @@ function App() {
         </button>
         <button onClick={removeNumber} className="input-button">
           Удалить
-        </button>
-      </form>
-      <form className="form-control">
-      <button type="button" onClick={findMax} className="find-max-button">
-          Найти максимум
-        </button>
-        <button type="button" onClick={findMin} className="find-min-button">
-          Найти минимум
         </button>
       </form>
       <div className="tf-tree tf-custom">
